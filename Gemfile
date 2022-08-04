@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -19,11 +21,11 @@ gem "puma", "~> 5.0"
 gem "cssbundling-rails"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -31,8 +33,8 @@ group :development do
   # gem "spring"
 end
 
-gem "standard", "~> 1.14", :groups => [:development, :test]
-gem "rubocop-performance", "~> 1.14", :groups => [:development, :test]
-gem "rubocop-rails", "~> 2.15", :groups => [:development, :test]
-gem "rubocop-rake", "~> 0.6.0", :groups => [:development, :test]
-gem "rubocop-rspec", "~> 2.12", :groups => [:development, :test]
+gem "standard", "~> 1.14", groups: [:development, :test]
+gem "rubocop-performance", "~> 1.14", groups: [:development, :test]
+gem "rubocop-rails", "~> 2.15", groups: [:development, :test]
+gem "rubocop-rake", "~> 0.6.0", groups: [:development, :test]
+gem "rubocop-rspec", "~> 2.12", groups: [:development, :test]
