@@ -31,3 +31,8 @@ group :development do
   # gem "spring"
 end
 
+gem "standard", "~> 1.14", :groups => [:development, :test]
+gem "rubocop-performance", "~> 1.14", :groups => [:development, :test]
+gem "rubocop-rails", "~> 2.15", :groups => [:development, :test]
+gem "rubocop-rake", "~> 0.6.0", :groups => [:development, :test]
+gem "rubocop-rspec", "~> 2.12", :groups => [:development, :test]

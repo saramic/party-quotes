@@ -15,6 +15,10 @@ install:
 	asdf install
 	bin/setup
 
+.PHONY: build
+build:
+	bundle exec rubocop
+
 .PHONY: usage
 usage:
 	@echo
@@ -24,4 +28,5 @@ usage:
 	@echo
 	@echo "${YELLOW}make${NC}              this menu"
 	@echo "${YELLOW}make install${NC}      install all the things"
+	@echo "${YELLOW}make build${NC}        build all the things"
 	@echo
