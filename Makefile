@@ -19,9 +19,16 @@ install:
 rubocop-fix:
 	bundle exec rubocop -A
 
-.PHONY: build
-build:
+.PHONY: rubocop
+rubocop:
 	bundle exec rubocop
+
+.PHONY: rspec
+rspec:
+	bundle exec rspec spec
+
+.PHONY: build
+build: rubocop rspec
 
 .PHONY: usage
 usage:
