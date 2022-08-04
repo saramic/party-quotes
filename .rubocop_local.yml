@@ -16,3 +16,7 @@ RSpec/ExampleLength:
   Enabled: false
 RSpec/MultipleExpectations:
   Enabled: false
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+

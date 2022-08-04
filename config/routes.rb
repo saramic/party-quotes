@@ -2,8 +2,10 @@
 
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resource :messages, only: %i[new] do
-    get :slideshow
+  resources :messages, only: %i[new create show edit update] do
+    collection do
+      get :slideshow
+    end
   end
 
   # a test only route used by spec/features/it_works_spec.rb
