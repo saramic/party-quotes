@@ -1,6 +1,50 @@
-<div>
-  <%= link_to "Add a message", new_message_path %>
+<div class="flex flex-col items-center justify-start font-sans min-h-96 bg-gray-50">
+  <div>
+    <p class="p-2 text-4xl font-bold text-center text-blue-800">
+      Felix Party Quotes
+    </p>
+  </div>
+  <div>
+    <p class="p-3 pt-12 text-lg font-bold text-gray-500 lg:text-gray-300">
+      Why not add yours below
+    </p>
+  </div>
 </div>
-<div>
-  <%= link_to "View message slideshow", slideshow_messages_path %>
+<div class="relative z-50 flex flex-col items-center justify-between p-3">
+  <%= link_to(
+    "Add a message",
+    new_message_path,
+    class: %w[
+      bg-transparent
+      hover:bg-blue-500
+      text-blue-700
+      font-semibold
+      hover:text-white
+      py-2
+      px-4
+      border
+      border-blue-500
+      hover:border-transparent
+      rounded
+    ]
+  ) %>
+</div>
+<div class="relative z-50 flex flex-col items-center justify-between p-3">
+  <%= link_to(
+    "View message slideshow",
+    slideshow_messages_path,
+    class: %w[
+      bg-transparent
+      hover:bg-blue-500
+      text-blue-700
+      font-semibold
+      hover:text-white
+      py-2
+      px-4
+      border
+      border-blue-500
+      hover:border-transparent
+      rounded
+    ]
+   ) %>
 </div>
