@@ -10,7 +10,9 @@
   </p>
 
   <p>
-    <%= image_tag url_for(message.picture) %>
+    <% if message.picture.attached? %>
+      <%= image_tag url_for(message.picture) %>
+    <% end %>
   </p>
 
 </div>
