@@ -30,6 +30,12 @@ rspec:
 .PHONY: build
 build: rubocop rspec
 
+.PHONY: deploy
+deploy:
+	RAILS_MASTER_KEY=`cat config/master.key` \
+		HEROKU_APP_NAME=felix-party-quotes \
+		bin/makefile/heroku-create
+
 .PHONY: usage
 usage:
 	@echo
@@ -44,4 +50,8 @@ usage:
 	@echo "Development"
 	@echo
 	@echo "${YELLOW}make rubocop-fix${NC}  run rubocop -A"
+	@echo
+	@echo "Deployment"
+	@echo
+	@echo "${YELLOW}make deploy${NC}       deploy to heroku"
 	@echo
