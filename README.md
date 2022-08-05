@@ -5,7 +5,13 @@
 ```sh
 make
 make install
+
 bin/rails server
+yarn build:css --watch
+
+# OR use foreman to run the Procfile.dev
+
+foreman start --procfile=Procfile.dev
 ```
 
 ## Original
