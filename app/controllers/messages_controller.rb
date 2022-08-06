@@ -31,6 +31,13 @@ class MessagesController < ApplicationController
     end
   end
 
+  def slideshow
+    @message = Message.where(id: params[:id]).first || Message.order(:created_at).first
+    message_ids = Message.select(:id).order(:created_at).pluck(:id)
+    next_message_order_index = message_ids.index(@message.id) + 1
+    @next_message_id = message_ids[next_message_order_index >= message_ids.length ? 0 : next_message_order_index]
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
