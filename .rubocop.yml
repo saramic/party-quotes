@@ -27,3 +27,4 @@ AllCops:
     - "gems/**/*"
     - "tmp/**/*"
     - "vendor/**/*"
+    - "Brewfile"

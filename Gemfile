@@ -26,6 +26,9 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 # using S3 for storage
 gem "aws-sdk-s3", "~> 1.114"
 
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+gem "image_processing", "~> 1.2"
+
 group :test do
   gem "capybara", "~> 3.37"
   gem "capybara-inline-screenshot", "~> 2.2"

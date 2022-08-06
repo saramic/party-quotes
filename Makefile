@@ -12,6 +12,7 @@ NC      = \033[0m
 
 .PHONY: install
 install:
+	brew bundle
 	asdf install
 	bin/setup
 
