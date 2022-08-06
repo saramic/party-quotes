@@ -1,18 +1,35 @@
-<div id="<%= dom_id message %>">
-  <p>
-    <strong>Text:</strong>
-    <%= message.text %>
-  </p>
+<style>
+  .wrapper{
+    display: grid;
+    height: 100vh;
+    place-items: center
+  }
+</style>
 
-  <p>
-    <strong>Name:</strong>
-    <%= message.name %>
-  </p>
-
-  <p>
+<div class="wrapper bg-gray-400 antialiased text-gray-900">
+  <div class="p-5">
     <% if message.picture.attached? %>
-      <%= image_tag url_for(message.picture) %>
+      <%= image_tag(
+        url_for(message.picture),
+        class: "w-full object-cover object-center rounded-lg shadow-md",
+      ) %>
+    <% else %>
+      <%# placeholder image? %>
     <% end %>
-  </p>
-
+      
+    <div class="relative px-4 -mt-64">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="h-6 text-8xl text-left text-gray-600 font-serif">“</div>
+        <p class="px-10 mt-1 text-6xl font-semibold leading-tight">
+          <%= message.text %>
+        </p>
+      
+        <div class="mt-4 pb-3">
+          <span class="text-2xl text-teal-600 text-md font-semibold uppercase float-right">
+            <%= message.name %>
+          </span>
+        </div>  
+      </div>
+    </div>
+  </div>
 </div>
