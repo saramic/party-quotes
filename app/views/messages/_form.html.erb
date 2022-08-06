@@ -1,32 +1,49 @@
-<%= form_with(model: message) do |form| %>
-  <% if message.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+  <%= form_with(model: message, class: "px-8 pt-6 pb-8 mb-4") do |form| %>
+    <% if message.errors.any? %>
+      <div class="text-red-500 bg-red-100 border border-red-500 p-3 rounded mb-2">
+        <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
 
-      <ul>
-        <% message.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% message.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-4">
+      <%= form.label :text, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.text_area(
+        :text,
+        class: "shadow appearance-none border #{message.errors.has_key?(:text) ? "border-red-500 " : " "}rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+        rows: "10",
+      ) %>
+      <% if message.errors.has_key?(:text) %>
+        <p class="text-red-500 text-xs italic">
+          <%= message.errors[:text].join %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.text_field(
+        :name,
+        class: "shadow appearance-none border #{message.errors.has_key?(:text) ? "border-red-500 " : " "}rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+      ) %>
+      <% if message.errors.has_key?(:name) %>
+        <p class="text-red-500 text-xs italic">
+          <%= message.errors[:name].join %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="mb-4">
+      <%= form.label :picture, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.file_field :picture, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <%= form.submit class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :text, style: "display: block" %>
-    <%= form.text_field :text %>
-  </div>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :picture %>
-    <%= form.file_field :picture %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
