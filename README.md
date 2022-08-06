@@ -1,5 +1,8 @@
 # README
 
+[![CI](https://github.com/saramic/party-quotes/actions/workflows/ci.yml/badge.svg)
+](https://github.com/saramic/party-quotes/actions/workflows/ci.yml)
+
 ## TL;DR
 
 ```sh
