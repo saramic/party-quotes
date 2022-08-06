@@ -32,10 +32,14 @@ class MessagesController < ApplicationController
   end
 
   def slideshow
+    @pause = params[:pause] # pause for testing
+    @time = 5 # 5 seconds default
+    @time = Integer(params[:time], 10) if /\d+/.match?(params[:time])
     @message = Message.where(id: params[:id]).first || Message.order(:created_at).first
     message_ids = Message.select(:id).order(:created_at).pluck(:id)
     next_message_order_index = message_ids.index(@message.id) + 1
     @next_message_id = message_ids[next_message_order_index >= message_ids.length ? 0 : next_message_order_index]
+    @next_refresh_path = slideshow_messages_path(id: @next_message_id, time: @time)
   end
 
   private
