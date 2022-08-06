@@ -22,4 +22,4 @@ jobs:
 
       - name: rubocop
         run: |
-          make build
+          make rubocop
