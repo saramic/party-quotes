@@ -48,4 +48,6 @@ jobs:
       - name: rspec
         run: |
           bin/setup
+          yarn
+          yarn build:css
           make rspec
