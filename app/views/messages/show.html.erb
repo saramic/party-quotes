@@ -1,8 +1,8 @@
-<p style="color: green"><%= notice %></p>
+<p style="color: green" data-testid="notification"><%= notice %></p>
 
 <%= render @message %>
 
 <div>
   <%= link_to "Edit this message", edit_message_path(@message) %> |
-  <%= link_to "Back", root_path %>
+  <%= link_to "Back", root_path, data: { testid: "back" } %>
 </div>
