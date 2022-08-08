@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
   end
 
   def edit
+    redirect_to @message, notice: "Message is now locked." if @message.created_at + 2.minutes < Time.zone.now
   end
 
   def create

@@ -6,6 +6,7 @@ class App < SitePrism::Page
   element :add_message, :qa, "add-message"
   element :view_slideshow, :qa, "view-slideshow"
   element :back, :qa, "back"
+  element :edit, :qa, "edit"
   element :text, :qa, "message-text"
   element :name, :qa, "message-name"
   element :submit, :css, "input[type=submit]"

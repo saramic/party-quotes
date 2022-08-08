@@ -3,6 +3,6 @@
 <%= render @message %>
 
 <div>
-  <%= link_to "Edit this message", edit_message_path(@message) %> |
+  <%= link_to "Edit this message", edit_message_path(@message), data: { testid: "edit" } %> |
   <%= link_to "Back", root_path, data: { testid: "back" } %>
 </div>
