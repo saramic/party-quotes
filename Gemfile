@@ -29,6 +29,9 @@ gem "aws-sdk-s3", "~> 1.114"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
+# Use to generate a QR code to find the site
+gem "rqrcode", "~> 2.1"
+
 group :test do
   gem "capybara", "~> 3.37"
   gem "capybara-inline-screenshot", "~> 2.2"

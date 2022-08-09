@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get :slideshow
     end
   end
+  resource :promote, only: %i[show]
 
   # a test only route used by spec/features/it_works_spec.rb
   get "test_root", to: "rails/welcome#index", as: "test_root_rails"
