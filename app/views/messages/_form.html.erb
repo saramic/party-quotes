@@ -46,3 +46,17 @@
       <%= form.submit class: "bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
     </div>
   <% end %>
+
+<script type="text/javascript">
+  let nameInput = document.querySelector("#message_name"); // fetch by id #id_name
+  nameInput.addEventListener("input", updateValue); // listen to any input events
+
+  function updateValue(event) { // called for every single change in input
+    // console.log(event.target.value); // for debugging - See updates in console as they type name
+    if(event.target.value === "tata") { // check for a particular value
+      let titleNewMessage = document.querySelector("#title-new-message"); // fetch by id #id-name
+      // note following line is buggy as will be added every time you type tata
+      titleNewMessage.textContent = `${titleNewMessage.textContent} - from Dad`;
+    }
+  }
+</script>
