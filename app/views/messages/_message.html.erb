@@ -1,36 +1,19 @@
-<style>
-  .wrapper{
-    display: grid;
-    height: 100vh;
-    place-items: center
-  }
-</style>
-
-<div class="wrapper bg-gray-400 antialiased text-gray-900">
-  <div class="p-5">
-    <% if message.picture.attached? %>
-      <%= image_tag(
-        url_for(message.picture.variant(resize_to_fit: [1200, 1200])),
-        class: "w-full object-cover object-center rounded-lg shadow-md",
-        data: { testid: "image" },
-      ) %>
-    <% else %>
-      <%# placeholder image? %>
-    <% end %>
-      
-    <div class="relative px-4 -mt-64">
-      <div class="bg-white p-6 rounded-lg shadow-lg">
-        <div class="h-6 text-8xl text-left text-gray-600 font-serif">“</div>
-        <p class="px-10 mt-1 text-6xl font-semibold leading-tight" data-testid="message-text">
-          <%= message.text %>
-        </p>
-      
-        <div class="mt-4 pb-3">
-          <span class="text-2xl text-teal-600 text-md font-semibold uppercase float-right" data-testid="message-name">
-            <%= message.name %>
-          </span>
-        </div>  
-      </div>
+<div class="relative w-[800px] mx-auto mt-3">
+  <div class="slide relative mt-2">
+    <img class="w-full h-[800px] object-cover"
+      <% if message.picture.attached? %>
+        <%= image_tag(
+          url_for(message.picture.variant(resize_to_fit: [1200, 1200]))
+        ) %>
+      <% else %>
+        <%= image_tag "default.jpeg"%>
+      <% end %>
+    <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
+      data-testid="message-name">
+      <%= message.name %>
     </div>
   </div>
+    <div class="absolute top-2 w-full px-5 py-3 bg-black/40 text-center text-white"
+    data-testid="message-text"><%= message.text %></div>
+    </div>
 </div>
