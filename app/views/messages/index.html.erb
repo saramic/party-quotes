@@ -1,52 +1,56 @@
-<div class="flex flex-col items-center justify-start font-sans min-h-96 bg-gray-50">
-  <div>
-    <p class="p-2 text-4xl font-bold text-center text-blue-800">
-      Felix Party Quotes
-    </p>
+<div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+  <div class="w-full p-2 ">
+      <main role="main" class="w-full flex flex-col content-center justify-center ">
+          <div class="w-full sm:w-2/3 lg:w-1/3 bg-gray-50 rounded-xl m-auto">
+              <div class="bg-white rounded shadow px-4 pt-5 pb-4 sm:p-6 sm:pb-4 items-center">
+                <p class="p-2 text-4xl font-bold text-center text-purple-500">
+                  Felix Party Quotes
+                </p>
+                <p class="p-3 pt-12 text-lg font-bold text-gray-500 lg:text-gray-300 text-center">
+                  Share your photobooth pic and a message
+                </p>
+                <div class="relative z-50 flex flex-col items-center justify-between p-3">
+                <%= link_to(
+                  "Add a message",
+                  new_message_path,
+                  class: %w[
+                    bg-transparent
+                    hover:bg-pink-500
+                    text-pink-700
+                    font-semibold
+                    hover:text-white
+                    py-2
+                    px-4
+                    border
+                    border-pink-500
+                    hover:border-transparent
+                    rounded
+                  ],
+                  data: {testid: "add-message"},
+                ) %>
+              </div>
+              <div class="relative z-50 flex flex-col items-center justify-between p-3">
+                <%= link_to(
+                  "View message slideshow",
+                  slideshow_messages_path,
+                  class: %w[
+                    bg-transparent
+                    hover:bg-indigo-500
+                    text-indigo-700
+                    font-semibold
+                    hover:text-white
+                    py-2
+                    px-4
+                    border
+                    border-indigo-500
+                    hover:border-transparent
+                    rounded
+                  ],
+                  data: {testid: "view-slideshow"},
+                ) %>
+              </div>
+              </div>
+          </div>
+      </main>
   </div>
-  <div>
-    <p class="p-3 pt-12 text-lg font-bold text-gray-500 lg:text-gray-300">
-      Why not add yours below
-    </p>
-  </div>
-</div>
-<div class="relative z-50 flex flex-col items-center justify-between p-3">
-  <%= link_to(
-    "Add a message",
-    new_message_path,
-    class: %w[
-      bg-transparent
-      hover:bg-blue-500
-      text-blue-700
-      font-semibold
-      hover:text-white
-      py-2
-      px-4
-      border
-      border-blue-500
-      hover:border-transparent
-      rounded
-    ],
-    "data-testid": "add-message",
-  ) %>
-</div>
-<div class="relative z-50 flex flex-col items-center justify-between p-3">
-  <%= link_to(
-    "View message slideshow",
-    slideshow_messages_path,
-    class: %w[
-      bg-transparent
-      hover:bg-blue-500
-      text-blue-700
-      font-semibold
-      hover:text-white
-      py-2
-      px-4
-      border
-      border-blue-500
-      hover:border-transparent
-      rounded
-    ],
-    "data-testid": "view-slideshow",
-   ) %>
 </div>
