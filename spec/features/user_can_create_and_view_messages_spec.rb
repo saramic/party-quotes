@@ -32,7 +32,7 @@ describe "User can create and view messages", :js do
     Then "they see their message show up" do
       app.when_loaded do |page|
         expect(page.text.text).to eq "Such a great party"
-        expect(page.name.text).to eq "ANONYMOUS PARTY GOER" # capitalized in browser through CSS
+        expect(page.name.text).to eq "anonymous party goer"
       end
     end
   end
