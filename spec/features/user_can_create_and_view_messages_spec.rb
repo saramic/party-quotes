@@ -11,9 +11,9 @@ describe "User can create and view messages", :js do
       app.load do |page|
         page.add_message.click
         page.submit!(
-          Text: "Such a great party",
-          Name: "anonymous party goer",
-          Picture: "spec/fixtures/images/party-1-adi-goldstein-Hli3R6LKibo-unsplash.jpg",
+          message_text: "Such a great party",
+          message_name: "anonymous party goer",
+          message_picture: "spec/fixtures/images/party-1-adi-goldstein-Hli3R6LKibo-unsplash.jpg",
         )
       end
     end
@@ -43,9 +43,9 @@ describe "User can create and view messages", :js do
       app.load do |page|
         page.add_message.click
         page.submit!(
-          Text: "Such a great party",
-          Name: "anonymous party goer",
-          Picture: "spec/fixtures/images/party-1-adi-goldstein-Hli3R6LKibo-unsplash.jpg",
+          message_text: "Such a great party",
+          message_name: "anonymous party goer",
+          message_picture: "spec/fixtures/images/party-1-adi-goldstein-Hli3R6LKibo-unsplash.jpg",
         )
       end
     end
@@ -57,7 +57,7 @@ describe "User can create and view messages", :js do
     And "they hit edit and change the text" do
       app.edit.click
       app.submit!(
-        Text: "Such a great party YAAAAAAAAAAAAS",
+        message_text: "Such a great party YAAAAAAAAAAAAS",
       )
     end
 

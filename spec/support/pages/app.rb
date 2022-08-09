@@ -13,7 +13,7 @@ class App < SitePrism::Page
 
   def submit!(**args)
     args.each do |key, value|
-      if page.find("[name=\"message\[#{key.downcase}\]\"]")["type"] == "file"
+      if page.find("##{key}")["type"] == "file"
         attach_file(key, File.absolute_path(value))
       else
         fill_in key, with: value

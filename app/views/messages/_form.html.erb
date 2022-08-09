@@ -11,8 +11,7 @@
 <% end %>
 
 <div class="mb-4">
- <p class= "block text-gray-700 text-sm font-bold mb-2"> Your message</p>
-  <%# <%= form.label :text, class: "block text-gray-700 text-sm font-bold mb-2" %>
+  <%= form.label :text, "Your message", class: "block text-gray-700 text-sm font-bold mb-2" %>
   <%= form.text_area(
     :text,
     class: "shadow appearance-none border #{message.errors.has_key?(:text) ? "border-red-500 " : " "}rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
@@ -26,8 +25,7 @@
 </div>
 
     <div class="mb-4">
-     <p class= "block text-gray-700 text-sm font-bold mb-2">Name</p>
-      <%# <%= form.label :name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.label :name, "Name", class: "block text-gray-700 text-sm font-bold mb-2" %>
       <%= form.text_field(
         :name ,
         class: "shadow appearance-none border #{message.errors.has_key?(:text) ? "border-red-500 " : " "}rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
@@ -40,8 +38,7 @@
     </div>
 
     <div class="mb-4">
-     <p class= "block text-gray-700 text-sm font-bold mb-2">Photo</p>
-      <%# <%= form.label :picture, class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.label :picture, "Photo", class: "block text-gray-700 text-sm font-bold mb-2" %>
       <%= form.file_field :picture, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
 
