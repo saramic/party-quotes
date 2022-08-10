@@ -1,5 +1,4 @@
-<div class="relative w-[800px] mx-auto mt-3">
-  <div class="slide relative mt-2">
+  <div class="relative mt-2">
     <img class="w-full h-[800px] object-cover"
       <% if message.picture.attached? %>
         <%= image_tag(
@@ -12,8 +11,6 @@
       data-testid="message-name">
       <%= message.name %>
     </div>
-  </div>
-    <div class="absolute top-2 w-full px-5 py-3 bg-black/40 text-center text-white"
-    data-testid="message-text"><%= message.text %></div>
-    </div>
+<div class="absolute top-0 w-full px-5 py-3 bg-black/40 text-center text-white"
+  data-testid="message-text"><%= message.text %>
 </div>
