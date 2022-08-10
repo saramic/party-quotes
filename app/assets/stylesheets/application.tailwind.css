@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* custom CSS below */
+
+/* define animation function */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100vw);
+    /* alternately could animate any value, width, height, colour, margin, etc */
+    /* margin-left: -100vw; */
+  }
+  50% {
+    transform: translateX(-100vw); /* wait 50% of animation time before starting to move it */
+    /* alternately could animate any value, width, height, colour, margin, etc */
+    /* margin-left: -100vw; */
+  }
+  to {
+    transform: translateX(0);
+    /* alternately could animate any value, width, height, colour, margin, etc */
+    /* margin-left: 0; */
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+  40% {transform: translateY(-30px);} 
+  60% {transform: translateY(-15px);} 
+} 
+
+/* class that uses the animation function */
+.message-text-display {  
+  /* short form */
+  /* animation: 1s ease-in-out 0s 1 slideInFromLeft; */
+
+  /* long form */
+  animation-duration: 1s, 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s, 1s; /* wait 1s before starting the bounce animation */
+  animation-name: slideInFromLeft, bounce; /* comma separated list of animation names */
+}
