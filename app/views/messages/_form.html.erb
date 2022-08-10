@@ -43,11 +43,25 @@
     </div>
 
     <div class="flex items-center justify-between">
-      <%= form.submit class: "bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-    </div>
+
+      <%= form.submit class: "bg-pink-500 hover:bg-pink-700 text-white font-bold  py-2 px-4 rounded focus:outline-none focus:shadow-outline",
+      disabled: true, id: "submit" %>
+   </div>
   <% end %>
 
+
 <script type="text/javascript">
+//this is not working if the page is reloaded
+const messageInput = document.querySelector('#message_text');
+messageInput.addEventListener('input', updateButtonStatus);
+
+function updateButtonStatus(e) {
+let countMessage = e.target.value.length;
+if (countMessage >= 6 ){
+  document.querySelector("#submit").disabled=false
+}
+}
+
   let nameInput = document.querySelector("#message_name"); // fetch by id #id_name
   nameInput.addEventListener("input", updateValue); // listen to any input events
 
@@ -59,4 +73,4 @@
       titleNewMessage.textContent = `${titleNewMessage.textContent} - from Dad`;
     }
   }
-</script>
+  </script>
