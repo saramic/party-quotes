@@ -55,40 +55,26 @@
 const messageInput = document.querySelector('#message_text');
 const nameInput = document.querySelector('#message_name');
 const buttonGo = document.querySelector('#submit')
-messageInput.addEventListener('input', updateButtonStatusMessage);
-nameInput.addEventListener('input', updateButtonStatusName);
+messageInput.addEventListener('input', updateButton);
+nameInput.addEventListener('input', updateButton);
 
-function updateButtonStatusMessage(e) {
-let countMessage = e.target.value.length;
+function updateButton() {
+  const messageInput = document.querySelector('#message_text');
+  const nameInput = document.querySelector('#message_name');
+  let countMessage = messageInput.value.length;
+  let countName = nameInput.value.length;
 
-if (countMessage >= 260) {
-  document.querySelector("#submit").disabled=true
-  buttonGo.style.backgroundColor = "grey";
+  if (
+    countMessage <= 260 &&
+    countMessage >= 5 &&
+    countName > 4
+  ) {
+    document.querySelector("#submit").disabled=false
+    buttonGo.style.backgroundColor = "blue";
+  }
+  else {
+    document.querySelector("#submit").disabled=true
+    buttonGo.style.backgroundColor = "grey";
+  }
 }
-else if (countMessage >= 6){
-  document.querySelector("#submit").disabled=false
-  buttonGo.style.backgroundColor = "blue";
-}
-}
-
-function updateButtonStatusName(e) {
-let countName = e.target.value.length;
-
-if (countName >=4) {
-  document.querySelector("#submit").disabled=false
-  buttonGo.style.backgroundColor = "green";
-}
-}
-
-  // let nameInput = document.querySelector("#message_name"); // fetch by id #id_name
-  // nameInput.addEventListener("input", updateValue); // listen to any input events
-
-  // function updateValue(event) { // called for every single change in input
-  //   // console.log(event.target.value); // for debugging - See updates in console as they type name
-  //   if(event.target.value === "tata") { // check for a particular value
-  //     let titleNewMessage = document.querySelector("#title-new-message"); // fetch by id #id-name
-  //     // note following line is buggy as will be added every time you type tata
-  //     titleNewMessage.textContent = `${titleNewMessage.textContent} - from Dad`;
-  //   }
-  // }
   </script>
