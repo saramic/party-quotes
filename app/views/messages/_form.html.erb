@@ -61,7 +61,11 @@ nameInput.addEventListener('input', updateButtonStatusName);
 function updateButtonStatusMessage(e) {
 let countMessage = e.target.value.length;
 
-if ((countMessage >= 6) ){
+if (countMessage >= 260) {
+  document.querySelector("#submit").disabled=true
+  buttonGo.style.backgroundColor = "grey";
+}
+else if (countMessage >= 6){
   document.querySelector("#submit").disabled=false
   buttonGo.style.backgroundColor = "blue";
 }
