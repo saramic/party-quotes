@@ -4,12 +4,12 @@
     <meta http-equiv="refresh" content="<%= @time %>;url=<%= @next_refresh_path %>" />
   <% end %>
 <% end %>
-<div class="absolute top-2 right-0 h-16 w-16">
+<div class="absolute top-2 right-0 h-16 w-16 z-50">
   <%= link_to(
     "X",
     root_path,
     class: %w[
-      bg-transparent
+      bg-white
       hover:bg-gray-500
       text-gray-700
       font-semibold
@@ -23,8 +23,6 @@
     ]
   ) %>
 </div>
-<div class="relative w-[800px] mx-auto mt-3">
-  <div class="relative mt-2">
-<%= render @message %>
-</div>
+<div class="relative w-[800px] mx-auto max-h-screen">
+    <%= render @message %>
 </div>

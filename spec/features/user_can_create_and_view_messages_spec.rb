@@ -31,8 +31,8 @@ describe "User can create and view messages", :js do
 
     Then "they see their message show up" do
       app.when_loaded do |page|
-        expect(page.text.text).to eq "Such a great party"
-        expect(page.name.text).to eq "anonymous party goer"
+        expect(page.text.text).to eq '"Such a great party"'
+        expect(page.name.text).to eq "FROM ANONYMOUS PARTY GOER"
       end
     end
   end
@@ -63,7 +63,7 @@ describe "User can create and view messages", :js do
 
     Then "they see the message update" do
       app.when_loaded do |page|
-        expect(page.text.text).to eq "Such a great party YAAAAAAAAAAAAS"
+        expect(page.text.text).to eq '"Such a great party YAAAAAAAAAAAAS"'
       end
     end
 
