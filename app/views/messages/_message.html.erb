@@ -7,10 +7,10 @@
       <% else %>
         <%= image_tag "default.jpeg"%>
       <% end %>
-    <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-center text-white"
+    <div class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-left uppercase text-white font-serif"
       data-testid="message-name">
-      <%= message.name %>
+      from <%= message.name %>
     </div>
-<div class="absolute top-0 w-full px-5 py-3 bg-black/40 text-center text-white"
-  data-testid="message-text"><%= message.text %>
+<div class="absolute top-0 break-words w-full px-5 py-3 bg-black/40 text-center text-white italic capitalize"
+  data-testid="message-text">"<%= message.text %>"
 </div>
