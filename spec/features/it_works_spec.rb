@@ -11,7 +11,7 @@ describe "It works root rails demo page", :js do
     end
 
     Then "user sees they are on rails" do
-      expect(it_works_root.rails_version.text).to match(/7.0.3.1/)
+      expect(it_works_root.rails_version.text).to match(/7.1.3.2/)
       expect(it_works_root.ruby_version.text).to match(/ruby 3.2.0/)
     end
   end
