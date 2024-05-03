@@ -202,8 +202,7 @@ ALTER TABLE ONLY public.active_storage_attachments
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
-('20220804000000'),
+('20220804224940'),
 ('20220804224156'),
-('20220804224940');
-
+('20220804000000');
 
