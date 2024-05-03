@@ -3,6 +3,12 @@
 require "capybara/rspec"
 require "capybara/rails"
 require "capybara-inline-screenshot/rspec"
+#
+# following line is required to get around a versioning issue with ruby 3.0 and
+# the logger
+#   ArgumentError:
+#     wrong number of arguments (given 2, expected 0..1)
+Selenium::WebDriver.logger.output = false
 
 Capybara.javascript_driver = :selenium_chrome
 

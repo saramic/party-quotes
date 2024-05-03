@@ -39,7 +39,6 @@ group :test do
   gem "rspec-rails", "~> 5.1"
   gem "selenium-webdriver", "~> 4.3"
   gem "site_prism", "~> 3.7"
-  gem "webdrivers", "~> 5.0"
 end
 
 group :development, :test do
