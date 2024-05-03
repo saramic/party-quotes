@@ -34,7 +34,7 @@ build: rubocop rspec
 .PHONY: deploy
 deploy:
 	RAILS_MASTER_KEY=`cat config/master.key` \
-		HEROKU_APP_NAME=felix-party-quotes \
+		HEROKU_APP_NAME=kamil-party-quotes \
 		bin/makefile/heroku-create
 
 .PHONY: usage

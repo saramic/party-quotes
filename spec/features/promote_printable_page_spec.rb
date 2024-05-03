@@ -9,8 +9,8 @@ describe "Promote printable page", :js do
     end
 
     Then "there is a title, a sub title, and a QR code" do
-      expect(page.find(:qa, "title").text).to eq "Felix 18th Birthday Guest Book"
-      expect(page.find(:qa, "sub-title").text).to eq "Join in the fun and upload a pic and message for Felix's party!"
+      expect(page.find(:qa, "title").text).to eq "Kamil 18th Birthday Guest Book"
+      expect(page.find(:qa, "sub-title").text).to eq "Join in the fun and upload a pic and message for Kamil's party!"
       expect(page.find(:qa, "qr-code")).to be_truthy
     end
   end

@@ -77,5 +77,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.party_quotes_base_url = "https://felix-party-quotes.herokuapp.com"
+  config.party_quotes_base_url = "https://kamil-party-quotes.herokuapp.com"
 end
