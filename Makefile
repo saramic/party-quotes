@@ -37,6 +37,13 @@ deploy:
 		HEROKU_APP_NAME=kamil-party-quotes \
 		bin/makefile/heroku-create
 
+.PHONY: clean
+clean:
+	rm -rf app/assets/builds/*
+	rm -rf tmp/*
+	bin/rails db:drop
+	RAILS_ENV=test bin/rails db:drop
+
 .PHONY: usage
 usage:
 	@echo
