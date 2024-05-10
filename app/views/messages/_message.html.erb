@@ -1,12 +1,12 @@
   <div class="relative">
       <% if message.picture.attached? %>
         <%= image_tag(
-          url_for(message.picture.variant(resize_to_fit: [1200, 1200])),
-          class: "w-full h-full object-cover max-h-screen min-h-screen"
+          url_for(message.picture.variant(resize_to_fit: [1200, 0])),
+          class: "w-full h-full object-cover"
         ) %>
       <% else %>
         <%= image_tag("default.jpg",
-          class: "w-full h-full object-cover max-h-screen min-h-screen")%>
+          class: "w-full h-full object-cover")%>
       <% end %>
     <div
       class="absolute bottom-0 w-full px-5 py-3 bg-black/40 text-left uppercase text-white font-serif"

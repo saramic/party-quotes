@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :messages, only: %i[new create show edit update] do
     collection do
       get :slideshow
+      get :slideshow_turbo
+      get :next
     end
   end
   resource :promote, only: %i[show]

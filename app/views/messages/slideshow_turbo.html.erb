@@ -1,0 +1,41 @@
+
+<div class="absolute top-2 right-0 h-16 w-16 z-50">
+  <%= link_to(
+    "X",
+    root_path,
+    class: %w[
+      bg-white
+      hover:bg-gray-500
+      text-gray-700
+      font-semibold
+      hover:text-white
+      py-2
+      px-4
+      border
+      border-gray-500
+      hover:border-transparent
+      rounded
+    ]
+  ) %>
+</div>
+<div class="p-5 mx-auto max-h-screen">
+  <div class="relative w-[800px] mx-auto max-h-full">
+    <turbo-frame id="message" src="/messages/<%= @message.id %>?turbo=true">
+      loading ...
+    </turbo-frame>
+    <script type="text/javascript">
+      setInterval(function() {
+        const messageFrame = document.getElementById("message");
+        const currentMessageId = messageFrame["src"].split("/").pop().split("?")[0];
+        console.log("again");
+        console.log(currentMessageId);
+        fetch("/messages/next?id=" + currentMessageId)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            messageFrame.src = "/messages/" + data.id + "?turbo=true";
+          });
+      }, (<%= params[:time] || 5 %>) * 1000);
+    </script>
+  </div>
+</div>

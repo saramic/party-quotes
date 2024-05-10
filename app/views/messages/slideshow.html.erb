@@ -23,6 +23,12 @@
     ]
   ) %>
 </div>
-<div class="relative w-[800px] mx-auto max-h-screen">
-    <%= render @message %>
+<div class="p-5 mx-auto max-h-screen">
+  <div class="relative w-[800px] mx-auto max-h-full">
+    <% if @message %>
+      <%= render @message %>
+    <% else %>
+      no messages yet
+    <% end %>
+  </div>
 </div>
