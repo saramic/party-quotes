@@ -13,7 +13,7 @@ NC      = \033[0m
 .PHONY: install
 install:
 	brew bundle
-	asdf install
+	MAKELEVEL=0 asdf install
 	bin/setup
 
 .PHONY: rubocop-fix
