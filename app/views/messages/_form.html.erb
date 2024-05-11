@@ -45,36 +45,36 @@
     <div class="flex items-center justify-between">
 
       <%= form.submit class: "bg-slate-200 text-white font-bold  py-2 px-4 rounded focus:outline-none focus:shadow-outline",
-      disabled: true, id: "submit" %>
+      disabled: false, id: "submit" %>
    </div>
   <% end %>
 
 
 <script type="text/javascript">
-//this is not working if the page is reloaded
-const messageInput = document.querySelector('#message_text');
-const nameInput = document.querySelector('#message_name');
-const buttonGo = document.querySelector('#submit')
-messageInput.addEventListener('input', updateButton);
-nameInput.addEventListener('input', updateButton);
+# //this is not working if the page is reloaded
+# const messageInput = document.querySelector('#message_text');
+# const nameInput = document.querySelector('#message_name');
+# const buttonGo = document.querySelector('#submit')
+# messageInput.addEventListener('input', updateButton);
+# nameInput.addEventListener('input', updateButton);
 
-function updateButton() {
-  const messageInput = document.querySelector('#message_text');
-  const nameInput = document.querySelector('#message_name');
-  let countMessage = messageInput.value.length;
-  let countName = nameInput.value.length;
+# function updateButton() {
+#   const messageInput = document.querySelector('#message_text');
+#   const nameInput = document.querySelector('#message_name');
+#   let countMessage = messageInput.value.length;
+#   let countName = nameInput.value.length;
 
-  if (
-    countMessage <= 260 &&
-    countMessage >= 5 &&
-    countName > 4
-  ) {
-    document.querySelector("#submit").disabled=false
-    buttonGo.style.backgroundColor = "blue";
-  }
-  else {
-    document.querySelector("#submit").disabled=true
-    buttonGo.style.backgroundColor = "grey";
-  }
-}
+#   if (
+#     countMessage <= 260 &&
+#     countMessage >= 5 &&
+#     countName > 4
+#   ) {
+#     document.querySelector("#submit").disabled=false
+#     buttonGo.style.backgroundColor = "blue";
+#   }
+#   else {
+#     document.querySelector("#submit").disabled=true
+#     buttonGo.style.backgroundColor = "grey";
+#   }
+# }
   </script>
