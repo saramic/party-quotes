@@ -32,7 +32,7 @@ SET default_table_access_method = heap;
 --
 
 CREATE TABLE public.active_storage_attachments (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     name character varying NOT NULL,
     record_type character varying NOT NULL,
     record_id uuid NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE public.active_storage_attachments (
 --
 
 CREATE TABLE public.active_storage_blobs (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     key character varying NOT NULL,
     filename character varying NOT NULL,
     content_type character varying,
@@ -63,7 +63,7 @@ CREATE TABLE public.active_storage_blobs (
 --
 
 CREATE TABLE public.active_storage_variant_records (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     blob_id uuid NOT NULL,
     variation_digest character varying NOT NULL
 );
@@ -86,7 +86,7 @@ CREATE TABLE public.ar_internal_metadata (
 --
 
 CREATE TABLE public.messages (
-    id uuid DEFAULT public.gen_random_uuid() NOT NULL,
+    id uuid DEFAULT gen_random_uuid() NOT NULL,
     text character varying,
     name character varying,
     created_at timestamp(6) without time zone NOT NULL,
